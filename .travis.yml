@@ -1,0 +1,16 @@
+dist: focal
+
+env:
+  global:
+    - OPTEE_VERSION=3.20.0
+    - ORG=worstass  
+    - REPO=${ORG}/optee-devcontainer
+    - IMAGE_TAG=${REPO}:${OPTEE_VERSION}
+
+services:
+  - docker
+
+script:
+  - docker login -u ${DOCKER_USER} -p ${DOCKER_PWD}
+  - docker build -t ${IMAGE_TAG} -f Dockerfile .
+  - docker push ${IMAGE_TAG}
