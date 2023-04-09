@@ -19,6 +19,6 @@ jobs:
       env:
         CI: true
         OPTEE_VERSION: 3.20.0
-        ORG: worstass  
+        ORG: worstass
         REPO: ${ORG}/optee-devcontainer
-        IMAGE_TAG: ${REPO}:${OPTEE_VERSION}
+        IMAGE_TAG: worstass/optee-devcontainer:3.20.0
