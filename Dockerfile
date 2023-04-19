@@ -1,4 +1,4 @@
-FROM condaforge/miniforge3:22.9.0-3 # ubuntu 22.04
+FROM condaforge/miniforge3:22.9.0-3
 ENV DEBIAN_FRONTEND noninteractive
 ENV OPTEE_VERSION 3.20.0
 RUN apt-get update && \
@@ -35,11 +35,6 @@ RUN apt-get update && \
       mtools \
       netcat \
       ninja-build \
-#      python3-crypto \
-#      python3-cryptography \
-#      python3-pip \
-#      python3-pyelftools \
-#      python3-serial \
       rsync \
       unzip \
       uuid-dev \
@@ -63,4 +58,3 @@ RUN mkdir repo && \
     repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml -b ${OPTEE_VERSION} && \
     repo sync -j`nproc` && \
     cd build && make toolchains -j`nproc`
-#RUN cd repo/build && make OPTEE_RUST_ENABLE=y CFG_TEE_RAM_VA_SIZE=0x00300000 -j`nproc`    
