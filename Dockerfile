@@ -51,6 +51,7 @@ RUN apt-get update && \
 	# extra for Docker only \
 	cpio \
 	git \
+	nano \
 	wget && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -62,5 +63,5 @@ RUN mkdir repo && \
     repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml -b $OPTEE_VERSION && \
     repo sync -j`nproc` && \
     cd build && make toolchains -j`nproc`
-RUN cd repo/build && make OPTEE_RUST_ENABLE=y CFG_TEE_RAM_VA_SIZE=0x00300000 -j`nproc`
+#RUN cd repo/build && make OPTEE_RUST_ENABLE=y CFG_TEE_RAM_VA_SIZE=0x00300000 -j`nproc`
     
