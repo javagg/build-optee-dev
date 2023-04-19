@@ -41,7 +41,7 @@ RUN apt-get update && \
       xdg-utils \
       xterm \
       xz-utils \
-      zlib1g-dev
+      zlib1g-dev \
       # extra for Docker only \
       cpio \
       git \
