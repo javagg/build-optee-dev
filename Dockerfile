@@ -3,6 +3,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV OPTEE_VERSION 3.20.0
 RUN apt-get update && \
     apt-get -y install \
+      ssh \
       android-tools-adb \
       android-tools-fastboot \
       autoconf \
