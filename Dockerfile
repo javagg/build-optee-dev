@@ -2,7 +2,7 @@ FROM condaforge/miniforge3:22.9.0-3
 ENV DEBIAN_FRONTEND noninteractive
 ENV OPTEE_VERSION 3.20.0
 RUN apt-get update && \
-    apt install \
+    apt-get -y install \
       android-tools-adb \
       android-tools-fastboot \
       autoconf \
