@@ -61,4 +61,5 @@ RUN mkdir repo && \
     cd repo && \
     repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml -b $OPTEE_VERSION && \
     repo sync -j`nproc` && \
-    cd build && make toolchains -j`nproc`
+    cd build && make toolchains -j`nproc` && make OPTEE_RUST_ENABLE=y CFG_TEE_RAM_VA_SIZE=0x00300000 -j`nproc`
+    
