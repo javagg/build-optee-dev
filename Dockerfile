@@ -35,6 +35,11 @@ RUN apt-get update && \
       mtools \
       netcat \
       ninja-build \
+      # python3-crypto \
+      # python3-cryptography \
+      # python3-pip \
+      # python3-pyelftools \
+      # python3-serial \
       rsync \
       unzip \
       uuid-dev \
