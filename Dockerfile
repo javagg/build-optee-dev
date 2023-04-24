@@ -63,4 +63,5 @@ RUN mkdir repo && \
     cd repo && \
     repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml -b ${OPTEE_VERSION} && \
     repo sync -j`nproc` && \
+    rm -rf .repo && \
     cd build && make toolchains -j`nproc`
