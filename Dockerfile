@@ -52,6 +52,7 @@ RUN apt-get update && \
       cpio \
       git \
       nano \
+      cmake gcc-aarch64-linux-gnu gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf \
       wget && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN pip install crypto cryptography pyelftools serial
