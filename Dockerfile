@@ -64,6 +64,7 @@ RUN mkdir repo && \
     repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml -b ${OPTEE_VERSION} && \
     repo sync -j`nproc` && \
     rm -rf .repo && \
+    sed -i 's/1.56.0/1.57.0/g' optee_rust/setup.sh && \
     cd build && \
     make toolchains -j`nproc` && \
     make OPTEE_RUST_ENABLE=y CFG_TEE_RAM_VA_SIZE=0x00300000 -j`nproc` optee-rust
